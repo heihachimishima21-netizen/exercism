@@ -1,0 +1,1 @@
+myreverse(str) = reverse(str)

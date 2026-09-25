@@ -1,0 +1,1 @@
+triangle(n) = (n >= 0) ? (x -> [binomial(x - 1, k) for k in 0:(x-1)]).(1:n) : throw(DomainError(""))

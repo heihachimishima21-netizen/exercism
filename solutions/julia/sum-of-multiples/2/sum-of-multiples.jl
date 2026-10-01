@@ -1,0 +1,1 @@
+sum_of_multiples(limit, factors) = (Set(factor:factor:(limit - 1)) for factor in factors if !iszero(factor)) |> (x -> union(x..., [0])) |> sum

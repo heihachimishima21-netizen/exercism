@@ -1,0 +1,1 @@
+ispangram(input) = Set('a':'z') ⊆ Set(lowercase(input))

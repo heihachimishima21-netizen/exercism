@@ -1,0 +1,1 @@
+transform(input::AbstractDict) = Dict(letter => points for (points, letters) in input for letter in lowercase.(letters))

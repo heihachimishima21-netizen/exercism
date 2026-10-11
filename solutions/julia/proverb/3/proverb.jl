@@ -1,0 +1,1 @@
+recite(pieces) = (i < length(pieces) ? "For want of a $(pieces[i]) the $(pieces[i+1]) was lost.\n" : (length(pieces) > 0 ? "And all for the want of a $(pieces[1])." : "") for i in 1:length(pieces)) |> join

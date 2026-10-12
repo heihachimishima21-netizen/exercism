@@ -1,0 +1,1 @@
+saddlepoints(M) = NTuple{2,Int}[(row, col) for row in axes(M, 1), col in axes(M, 2) if M[row, col] == maximum(M[row, :]) == minimum(M[:, col])]

@@ -1,0 +1,15 @@
+affine(c, a, b) = (isletter(c)) ? 'a' + mod(a * (c - 'a') + b, 26) :  c
+
+decrypt(c, mmi, b) = (isletter(c)) ? 'a' + mod(mmi * ((c - 'a') - b), 26) : c
+
+function encode(plaintext, a, b)
+    gcd(a, 26) != 1 && throw(ArgumentError(""))
+    encoded = (affine(lowercase(c), a, b) for c in plaintext if isletter(c) || isnumeric(c))
+    replace(join(encoded), r"(.{5})(?=.)" => s"\1 ")
+end
+
+function decode(ciphertext, a, b)
+    gcd(a, 26) != 1 && throw(ArgumentError(""))
+    mmi = invmod(a, 26)
+    decoded = (decrypt(c, mmi, b) for c in ciphertext if !isspace(c)) |> join
+end
